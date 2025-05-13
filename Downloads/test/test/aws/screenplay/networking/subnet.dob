@@ -1,0 +1,22 @@
+resources:
+
+  subnets:
+    - name: subnet1
+      cidr_block: 10.0.1.0/24
+      availability_zone: us-west-1c
+      vpc_id: vpc-055b6e561b19fad93
+      region: us-west-1
+      auto_assign_public_ip: True
+      tags:
+        - Key: Name
+          Value: testsubnet1
+
+    - name: subnet2
+      cidr_block: 10.0.2.0/24
+      availability_zone: us-west-1c
+      vpc_id: vpc-055b6e561b19fad93
+      region: us-west-1
+      auto_assign_public_ip: True
+      tags:
+        - Key: Name
+          Value: testsubnet2

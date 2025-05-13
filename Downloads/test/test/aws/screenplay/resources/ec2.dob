@@ -1,0 +1,31 @@
+resources:
+  # EC2 Instance creation
+  ec2_instances:
+    - name: Infracycle server
+      instance_type: t2.large
+      ami_id: ami-04a5bacc58328233d
+      key_name: keysforfinal
+      region: eu-central-1
+      security_group: sg-046939debef540a3c
+      count: 1
+      tags:
+        - Key: Name
+          Value: Infracycle
+      subnet_id: subnet-0c6c1155ad75aac2d
+
+remote-server:
+  - identifiers: "Infracycle"
+    username: "root"
+    category: "dev"
+  
+
+tasks:
+  - name: "Update Dev Servers"
+    action: "RUN"
+    command: "sudo apt-get update -y"
+  - name: "Installing Python"
+    action: "RUN"
+    command: "sudo apt install python3-pip -y"
+  - name: "Creating dir"
+    action: "RUN"
+    command: "mkdir /home/devops-bot"

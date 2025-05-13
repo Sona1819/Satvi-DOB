@@ -1,0 +1,22 @@
+resources:
+  memorydb_acls:
+    - acl_name: my-app-acl
+      usernames:
+        - admin-user
+        - readonly-user
+      region: us-east-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: CustomerPortal
+
+    - acl_name: analytics-acl
+      usernames:
+        - analytics-user
+      region: eu-west-1
+      tags:
+        - Key: Environment
+          Value: Development
+        - Key: Team
+          Value: DataScience

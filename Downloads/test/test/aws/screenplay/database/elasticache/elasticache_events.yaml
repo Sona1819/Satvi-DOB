@@ -1,0 +1,17 @@
+resources:
+  elasticache_events:
+    - subscription_name: my-elasticache-event-subscription
+      sns_topic_arn: arn:aws:sns:us-east-1:123456789012:my-notification-topic
+      source_type: replication-group  # Optional: can be 'replication-group', 'cache-cluster', etc.
+      source_ids:
+        - my-redis-replication-group-1
+        - my-redis-replication-group-2
+      event_categories:
+        - availability
+        - failure
+      region: us-east-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Name
+          Value: MyEventSubscription

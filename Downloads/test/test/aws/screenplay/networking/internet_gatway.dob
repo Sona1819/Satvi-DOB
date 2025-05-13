@@ -1,0 +1,7 @@
+resources:
+  internet_gateways:
+    - vpc_id: vpc-0c4737c217f1e8ef2  # Reference the VPC ID created above
+      region: us-west-1
+      tags:
+        - Key: Name
+          Value: testinternetgatway

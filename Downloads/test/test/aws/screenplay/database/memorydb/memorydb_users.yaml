@@ -1,0 +1,23 @@
+resources:
+  memorydb_users:
+    - username: redis-admin
+      passwords:
+        - MyStrongPassword123!
+      access_string: "on ~* +@all"
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Role
+          Value: AdminUser
+          
+    - username: redis-admin2
+      passwords:
+        - MyStrongPassword123!
+      access_string: "on ~* +@all"
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Role
+          Value: AdminUser

@@ -1,0 +1,25 @@
+resources:
+  rds_read_replicas:
+    - name: my-read-replica-2
+      db_instance_identifier: my-read-replica-2
+      source_db_instance_identifier: my-db-instance
+      db_instance_class: db.t3.micro
+      publicly_accessible: true
+      region: us-west-1
+      tags:
+        - Key: Name
+          Value: "MyReadReplica2"
+        - Key: Environment
+          Value: "Development"
+          
+    - name: my-read-replica-1
+      db_instance_identifier: my-read-replica-1
+      source_db_instance_identifier: my-db-instance
+      db_instance_class: db.t3.micro
+      publicly_accessible: true
+      region: us-west-1
+      tags:
+        - Key: Name
+          Value: "MyReadReplica1"
+        - Key: Environment
+          Value: "Development"

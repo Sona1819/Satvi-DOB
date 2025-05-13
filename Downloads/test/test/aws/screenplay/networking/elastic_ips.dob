@@ -1,0 +1,11 @@
+resources:
+  # Elastic IP creation
+  elastic_ips:
+    - name: myip
+      domain: vpc
+      region: us-west-1
+      tags:
+        - Key: Name
+          Value: TestElasticIP
+        - Key: Environment
+          Value: Dev

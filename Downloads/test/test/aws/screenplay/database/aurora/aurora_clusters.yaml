@@ -1,0 +1,19 @@
+resources:
+  aurora_clusters:
+    - db_cluster_identifier: my-aurora-cluster
+      engine: aurora-mysql
+      engine_version: 8.0.mysql_aurora.3.04.0
+      master_username: admin
+      master_user_password: MyStrongPassword123!
+      database_name: mydatabase
+      vpc_security_group_ids:
+        - sg-0db7a7e95c08483e1
+      db_subnet_group_name: my-rds-subnet-group
+      backup_retention_period: 7
+      storage_encrypted: true
+      region: us-east-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: CustomerPortal

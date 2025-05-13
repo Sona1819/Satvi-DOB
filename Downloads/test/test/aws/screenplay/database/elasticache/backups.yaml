@@ -1,0 +1,12 @@
+resources:
+  backups:
+    - name: backup
+      snapshot_name: my-redis-snapshot
+      source: my-valkey-cluster
+      source_type: replication_group        # or "cache_cluster" if snapshotting a single node
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: RedisBackup

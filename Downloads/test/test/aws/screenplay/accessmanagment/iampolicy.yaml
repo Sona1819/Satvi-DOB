@@ -1,0 +1,25 @@
+resources:
+  ###########################################################################
+  # USER GROUPS
+  ###########################################################################
+  iam_policies:
+    - name: "newpolicetocheck"
+      region: "us-east-1"
+      policy_document: |
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "s3:ListAllMyBuckets"
+              ],
+              "Resource": "*"
+            }
+          ]
+        }
+      tags:
+        - Key: "Environment"
+          Value: "Development"
+        - Key: "PolicyType"
+          Value: "ListBucketsOnly"

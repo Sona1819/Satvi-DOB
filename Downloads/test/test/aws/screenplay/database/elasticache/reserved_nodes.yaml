@@ -1,0 +1,10 @@
+resources:
+  reserved_nodes:
+    - offering_id: reserved-cache-node-offering-id-here
+      cache_node_count: 1                # (optional) if you want to buy multiple nodes, default is 1
+      region: us-east-1                   # must be specified or fallback to credential default
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: HighPerformanceCache

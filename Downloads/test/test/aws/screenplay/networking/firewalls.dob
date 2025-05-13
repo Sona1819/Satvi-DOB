@@ -1,0 +1,15 @@
+resources:
+  # Firewalls
+  firewalls:
+    - name: "my-network-firewall"
+      region: "us-west-1"
+      subnet_ids:
+        - "subnet-051c05ceb5f5b183b"
+        - "subnet-078fc553644395f00"
+      vpc_id: "vpc-0c4737c217f1e8ef2"
+      firewall_policy_arn: "arn:aws:network-firewall:us-west-1:533267079506:firewall-policy/my-firewall-policy"
+      tags:
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Name"
+          Value: "MyNetworkFirewall"

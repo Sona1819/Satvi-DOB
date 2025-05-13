@@ -1,0 +1,16 @@
+resources:
+  ######################################################################
+  # SITE-TO-SITE VPN CONNECTIONS
+  ######################################################################
+  vpn_connections:
+    - name : vpn connection
+      customer_gateway_id: "cgw-00b2c7b899445c287"
+      #vpn_gateway_id: "vgw-054c428013f26c8d2"
+      region: "us-west-1"
+      # Optionally, if using a Transit Gateway instead:
+      transit_gateway_id: "tgw-0145cefc510eeefc5"
+      tags:
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Name"
+          Value: "MySiteToSiteVPNwithtgw"

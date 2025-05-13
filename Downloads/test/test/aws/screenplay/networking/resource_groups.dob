@@ -1,0 +1,17 @@
+
+resources:
+  resource_groups:
+    - name: "my-resource-group"
+      region: "us-west-1"
+      resource_query:
+        resource_type_filters:
+          - "AWS::NetworkFirewall::Firewall"  # ✅ Correct Resource Type
+        tag_filters:
+          - key: "Name"
+            values:
+              - "MyNetworkFirewall"
+      tags:
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Name"
+          Value: "MyResourceGroup"

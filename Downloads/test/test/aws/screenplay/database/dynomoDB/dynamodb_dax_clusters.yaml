@@ -1,0 +1,16 @@
+resources:
+  dynamodb_dax_clusters:
+    - name: dynamodb_dax_clusters
+      cluster_name: my-dax-cluster
+      region: us-west-1
+      node_type: dax.r5.large
+      replication_factor: 3
+      iam_role_arn: arn:aws:iam::533267079506:role/aws-service-role/dax.amazonaws.com/AWSServiceRoleForDAX
+      subnet_group: my-dax-subnet-group
+      security_group_ids:
+        - sg-04529c1e7a5c67db7
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: RealTimeCache

@@ -1,0 +1,12 @@
+resources:
+  ebs_volumes:
+    - name: dev-data-volume
+      region: us-west-1
+      availability_zone: us-west-1a
+      size: 100
+      volume_type: gp3
+      tags:
+        - Key: Name
+          Value: dev-data-volume
+        - Key: Environment
+          Value: Dev

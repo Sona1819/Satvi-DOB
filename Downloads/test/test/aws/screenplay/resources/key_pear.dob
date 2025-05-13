@@ -1,0 +1,9 @@
+resources:
+  key_pairs:
+    - name: devops-key
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Dev
+        - Key: Name
+          Value: devops-key

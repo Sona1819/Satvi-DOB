@@ -1,0 +1,15 @@
+resources:
+  dynamodb_dax_parameter_groups:
+    - name: custom-dax-group
+      region: us-west-1
+      description: Custom parameter group for DAX performance tuning
+      parameters:
+        - ParameterName: query-ttl-millis
+          ParameterValue: "60000"
+        - ParameterName: record-ttl-millis
+          ParameterValue: "60000"
+      tags:
+        - Key: Project
+          Value: RealtimeCache
+        - Key: Environment
+          Value: Production

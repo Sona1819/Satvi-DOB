@@ -1,0 +1,11 @@
+resources:
+  db_parameter_groups:
+    - name: my-db-parameter-group
+      family: mysql8.0
+      description: "Custom MySQL 8.0 parameter group for performance tuning"
+      region: us-west-1
+      tags:
+        - Key: Name
+          Value: "MyDBParameterGroup"
+        - Key: Environment
+          Value: "Development"

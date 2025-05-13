@@ -1,0 +1,11 @@
+resources:
+  db_snapshots:
+    - name: snapshot
+      snapshot_identifier: my-db-snapshot-2024
+      db_instance_identifier: my-db-instance
+      region: us-west-1
+      tags:
+        - Key: Name
+          Value: "MyDatabaseSnapshot"
+        - Key: Environment
+          Value: "Production"

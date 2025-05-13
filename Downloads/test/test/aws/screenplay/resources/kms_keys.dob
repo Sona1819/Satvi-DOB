@@ -1,0 +1,13 @@
+resources:
+  kms_keys:
+    - alias_name: my-app-key
+      region: us-west-1
+      description: "KMS key for encrypting application data"
+      key_usage: ENCRYPT_DECRYPT
+      key_spec: SYMMETRIC_DEFAULT
+      origin: AWS_KMS
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Team
+          Value: Security

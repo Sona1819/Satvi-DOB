@@ -1,0 +1,19 @@
+resources:
+  # Transit Gateway creation
+  transit_gateways:
+    - name: "my-transit-gateway2"
+      region: "us-west-1"
+      description: "Transit Gateway for my network"
+      options:
+        amazon_side_asn: 64512  # Amazon Side ASN
+        auto_accept_shared_attachments: "disable"
+        default_route_table_association: "enable"
+        default_route_table_propagation: "enable"
+        MulticastSupport: "enable"
+        dns_support: "enable"
+        vpn_ecmp_support: "enable"
+      tags:
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Name"
+          Value: "Mtesttransit2"

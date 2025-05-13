@@ -1,0 +1,15 @@
+resources:
+  service_updates:
+    - service_update_name: my-elasticache-service-update
+      replication_group_ids:
+        - my-redis-replication-group-1
+        - my-redis-replication-group-2
+      cache_cluster_ids:
+        - my-cache-cluster-1
+        - my-cache-cluster-2
+      region: us-east-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: MaintenanceWindow
+          Value: Scheduled

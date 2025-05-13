@@ -1,0 +1,13 @@
+resources:
+  ebs_snapshots:
+    - name: app-db-backup
+      region: us-west-1
+      volume_id: vol-06834b707fa549059
+      description: "Daily snapshot for production DB volume"
+      tags:
+        - Key: Name
+          Value: app-db-backup
+        - Key: Environment
+          Value: Production
+        - Key: Backup
+          Value: Daily

@@ -1,0 +1,15 @@
+resources:
+  # Transit Gateway Multicast Domains
+  transit_gateway_multicast_domains:
+    - name: "MyTGWMulticastDomain"
+      region: "us-west-1"
+      transit_gateway_id: "tgw-019e04d5c34c730c3"  # ID of the existing Transit Gateway
+      options:
+        AutoAcceptSharedAssociations: "disable"  # Enable or disable auto-accept shared associations
+        Igmpv2Support: "enable"                 # Enable or disable IGMPv2 support
+        StaticSourcesSupport: "enable"          # Enable or disable static sources support
+      tags:
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Name"
+          Value: "MyTGWMulticastDomain"

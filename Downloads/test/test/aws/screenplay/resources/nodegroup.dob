@@ -1,0 +1,17 @@
+resources:
+  eks_nodegroups:
+    - name: "MyNodeGroup"
+      region: "us-east-1"
+      cluster_name: "MyEKSCluster"
+      instance_types: ["t3.medium"]
+      scaling_config:
+        minSize: 1
+        maxSize: 3
+        desiredSize: 2
+      subnet_ids:
+        - "subnet-08b3efc0fc5d067cf"
+        - "subnet-02389c02fcacc9189"
+      node_role: "arn:aws:iam::533267079506:role/eksctl_role"
+      tags:
+        - Key: "Name"
+          Value: "MyNodeGroup"

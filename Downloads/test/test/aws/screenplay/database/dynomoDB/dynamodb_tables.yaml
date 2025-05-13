@@ -1,0 +1,23 @@
+resources:
+  dynamodb_tables:
+    - table_name: MySampleTable214
+      region: us-west-1
+      key_schema:
+        - AttributeName: id
+          KeyType: HASH
+      attribute_definitions:
+        - AttributeName: id
+          AttributeType: S
+      billing_mode: PROVISIONED
+      provisioned_throughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+      stream_specification:
+        StreamEnabled: true
+        StreamViewType: NEW_AND_OLD_IMAGES
+      tags:
+        - Key: Environment
+          Value: Production
+      table_class: STANDARD
+      deletion_protection_enabled: false
+

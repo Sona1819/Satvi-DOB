@@ -1,0 +1,15 @@
+resources:
+  memorydb_clusters:
+    - name: my-memorydb-cluster
+      node_type: db.r6g.large
+      engine_version: 6.2
+      acl_name: my-memorydb-acl
+      subnet_group_name: my-memorydb-subnet-group
+      security_group_ids:
+        - sg-0ca663c8d8e6a2bb3
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Team
+          Value: Payments

@@ -1,0 +1,14 @@
+resources:
+  ######################################################################
+  # VIRTUAL PRIVATE GATEWAYS
+  ######################################################################
+  virtual_private_gateways:
+    - name: privategateway
+      amazon_side_asn: 64512
+      region: "us-west-1"
+      tags:
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Name"
+          Value: "MyVirtualPrivateGateway"
+

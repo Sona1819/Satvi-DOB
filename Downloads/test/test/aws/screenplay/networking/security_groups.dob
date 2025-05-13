@@ -1,0 +1,20 @@
+resources:
+  security_groups:
+    - name: SecurityGroup
+      vpc_id: vpc-055b6e561b19fad93
+      description: Allow HTTP and HTTPS traffic
+      region: us-west-1
+      inbound_rules:
+        - protocol: tcp
+          port_range: 22
+          cidr_blocks: "0.0.0.0/0"
+        - protocol: tcp
+          port_range: 80
+          cidr_blocks: "0.0.0.0/0"
+        - protocol: tcp
+          port_range: 443
+          cidr_blocks: "0.0.0.0/0"
+      tags:
+        - Key: Name
+          Value: mysecuritgroup
+

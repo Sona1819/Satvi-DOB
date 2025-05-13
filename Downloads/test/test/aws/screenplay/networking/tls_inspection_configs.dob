@@ -1,0 +1,18 @@
+
+resources:
+  tls_inspection_configs:
+    - name: "MyTLSInspectionConfig"
+      region: "us-east-1"
+      inspection_certificate_arn: "arn:aws:acm:us-east-1:533267079506:certificate/fbb0cf5a-b25b-4fec-9ed2-a7eca3acac16"
+      description: "TLS Inspection Config for Network Firewall"
+      scopes:
+        - sources:
+            - address_definition: "10.0.0.0/16"
+          destinations:
+            - address_definition: "0.0.0.0/0"
+          source_ports: []
+          destination_ports: []
+          protocols: []
+      tags:
+        - Key: "Environment"
+          Value: "Production"

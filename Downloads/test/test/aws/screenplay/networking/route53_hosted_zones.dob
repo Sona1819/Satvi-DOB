@@ -1,0 +1,12 @@
+resources:
+  route53_hosted_zones:
+    - name: example.com
+      private_zone: true
+      comment: "Private zone for internal services"
+      vpc_id: vpc-0123456789abcdef0
+      vpc_region: us-west-2
+      tags:
+        - Key: Environment
+          Value: Internal
+        - Key: Project
+          Value: DNS Management

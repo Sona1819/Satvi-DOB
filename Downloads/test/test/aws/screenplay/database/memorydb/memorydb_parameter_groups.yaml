@@ -1,0 +1,11 @@
+resources:
+  memorydb_parameter_groups:
+    - name: my-memorydb-param-group
+      family: memorydb_redis6
+      description: "Custom parameter group for MemoryDB Redis 6"
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: PaymentsService

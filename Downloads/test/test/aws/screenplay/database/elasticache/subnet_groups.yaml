@@ -1,0 +1,14 @@
+resources:
+  # Subnet groups
+  elasticache_subnet_groups:
+    - name: "my-elasticache-subnet-group2"
+      description: "Subnet group for ElastiCache"
+      region: "us-west-1"
+      subnet_ids:
+        - subnet-051c05ceb5f5b183b
+        - subnet-078fc553644395f00
+      tags:
+        - Key: Project
+          Value: RealtimeCache
+        - Key: Environment
+          Value: Production

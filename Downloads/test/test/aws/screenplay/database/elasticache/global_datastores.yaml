@@ -1,0 +1,12 @@
+resources:
+  # Global Datastore
+  global_datastores:
+    - name: "globaldatabase" 
+      global_datastore_id: "testdatabase"
+      primary_replication_group_id: "my-redis-single-node2"
+      replica_regions:
+        - "us-west-2"
+      region: "us-west-1"
+      tags:
+        - Key: "Environment"
+          Value: "Development"

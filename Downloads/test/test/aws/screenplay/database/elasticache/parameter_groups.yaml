@@ -1,0 +1,11 @@
+resources:
+  parameter_groups:
+    - name: my-redis-parameter-group
+      family: redis7
+      description: "Custom parameter group for Redis 7 cluster"
+      region: us-west-1
+      tags:
+        - Key: "Name"
+          Value: "MyRedisParameterGroup"
+        - Key: "Environment"
+          Value: "Development"

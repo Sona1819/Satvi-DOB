@@ -1,0 +1,13 @@
+resources:
+  target_registrations:
+    - name: app1-targets
+      region: us-west-1
+      target_group_arn: arn:aws:elasticloadbalancing:us-west-1:533267079506:targetgroup/my-app-tg/9c23b45dd6da648e
+      targets:
+        - Id: i-0abcdef1234567890
+          Port: 80
+        - Id: i-0abcdef1234567891
+          AvailabilityZone: us-east-1a
+      tags:
+        - Key: App
+          Value: Frontend

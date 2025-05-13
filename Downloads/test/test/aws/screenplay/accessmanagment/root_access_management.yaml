@@ -1,0 +1,9 @@
+resources:
+  root_access_management:
+    - name: root_access_management
+      region: us-east-1
+      enforce_mfa: true
+      check_access_keys: true
+      check_password_enabled: true
+      notify_on_findings: true
+      notification_email: root-security@company.com

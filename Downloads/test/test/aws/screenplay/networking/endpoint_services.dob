@@ -1,0 +1,11 @@
+resources:
+  endpoint_services:
+    - name: "my-endpoint-service"
+      network_load_balancer_arns:
+        - "arn:aws:elasticloadbalancing:us-west-1:533267079506:loadbalancer/net/Mapplication/541679b6b576b215"
+      acceptance_required: false
+      region: "us-west-1"
+      tags:
+        - Key: "Name"
+          Value: "MyEndpointService"
+

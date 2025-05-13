@@ -1,0 +1,23 @@
+resources:
+  # S3 Bucket creation
+  s3_buckets:
+    - name: s3 bucket
+      bucket_name: "newtestbucketfordevops-got01"
+      region: "us-west-1"
+      public_access_block: true
+      versioning: true
+      lifecycle_rules:
+        - id: "DeleteOldObjects"
+          prefix: "logs/"
+          status: "enabled"  # Ensure this field is present and has a valid value
+          expiration_in_days: 30
+      logging:
+        TargetBucket: "my-s3-bucket-3243"
+        TargetPrefix: "bucket-logs/"
+      encryption:
+        SSEAlgorithm: AES256
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Name
+          Value: testbucketfordun0236444

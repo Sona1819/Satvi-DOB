@@ -1,0 +1,23 @@
+resources:
+  elasticache_cluster_clients:
+    - name: redis-cli
+      version: 7.0
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: CustomerPortal
+        - Key: Name
+          Value: redis-cli
+
+    - name: memcached-tool
+      version: 1.6
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: CustomerPortal
+        - Key: Name
+          Value: memcached-tool

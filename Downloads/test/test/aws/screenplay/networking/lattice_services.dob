@@ -1,0 +1,9 @@
+resources:
+  # Lattice Services
+  lattice_services:
+    - name: "latencyservice"
+      auth_type: "AWS_IAM"
+      region: "us-west-1"
+      tags:
+        - Key: "APIVersion"
+          Value: "2.0"

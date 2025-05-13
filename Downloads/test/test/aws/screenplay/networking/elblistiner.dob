@@ -1,0 +1,16 @@
+resources:
+  listeners:
+    - name: my-https-listener
+      region: us-east-1
+      load_balancer_arn: arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/my-alb/50dc6c495c0c9188
+      protocol: HTTPS
+      port: 443
+      ssl_policy: ELBSecurityPolicy-2016-08
+      certificates:
+        - CertificateArn: arn:aws:acm:us-east-1:123456789012:certificate/1234abcd-12ab-34cd-56ef-1234567890ab
+      default_actions:
+        - Type: forward
+          TargetGroupArn: arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/my-tg/6d0ecf831eec9f09
+      tags:
+        - Key: Name
+          Value: MyHTTPSListener

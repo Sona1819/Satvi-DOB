@@ -1,0 +1,18 @@
+resources:
+  redis_caches:
+    - replication_group_id: my-redis-ha-cluster
+      description: "Highly available Redis cluster with automatic failover"
+      cache_node_type: cache.m6g.large
+      num_node_groups: 1
+      replicas_per_node_group: 1   # 👈 VERY IMPORTANT!
+      automatic_failover: true
+      region: us-east-1
+      security_group_ids:
+        - sg-0db7a7e95c08483e1
+      subnet_group_name: my-elasticache-subnet-group2
+      parameter_group_name: my-redis-parameter-group
+      tags:
+        - Key: Name
+          Value: "MyRedisHACluster"
+        - Key: Environment
+          Value: "Production"

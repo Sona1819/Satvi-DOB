@@ -1,0 +1,52 @@
+resources:
+  cloudfront_policies:
+    - name: MyOriginPolicy
+      type: OriginRequest
+      OriginRequestPolicyConfig:
+        Name: MyOriginPolicy
+        Comment: "Allow headers and query string"
+        HeadersConfig:
+          HeaderBehavior: whitelist
+          Headers:
+            Quantity: 2
+            Items:
+              - Authorization
+              - Host
+        QueryStringsConfig:
+          QueryStringBehavior: all
+        CookiesConfig:
+          CookieBehavior: none
+
+    - name: MyCachePolicy
+      type: Cache
+      CachePolicyConfig:
+        Name: MyCachePolicy
+        Comment: "Cache by path and header"
+        DefaultTTL: 86400
+        MaxTTL: 31536000
+        MinTTL: 0
+        ParametersInCacheKeyAndForwardedToOrigin:
+          EnableAcceptEncodingGzip: true
+          HeadersConfig:
+            HeaderBehavior: none
+          CookiesConfig:
+            CookieBehavior: none
+          QueryStringsConfig:
+            QueryStringBehavior: none
+
+    - name: MyResponseHeadersPolicy
+      type: ResponseHeaders
+      ResponseHeadersPolicyConfig:
+        Name: MyResponsePolicy
+        Comment: "CORS headers"
+        CorsConfig:
+          AccessControlAllowOrigins:
+            Quantity: 1
+            Items: ["*"]
+          AccessControlAllowHeaders:
+            Quantity: 1
+            Items: ["*"]
+          AccessControlAllowMethods:
+            Quantity: 3
+            Items: ["GET", "POST", "OPTIONS"]
+          OriginOverride: true

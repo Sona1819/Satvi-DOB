@@ -1,0 +1,25 @@
+resources:
+  iam_identity_providers:
+    - name: MySAMLProvider
+      type: SAML
+      region: us-east-1
+      metadata_document: |
+        <EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
+          entityID="https://idp.example.com/saml">
+          <!-- full metadata XML here -->
+        </EntityDescriptor>
+      tags:
+        - Key: Environment
+          Value: Production
+
+    - name: MyOIDCProvider
+      type: OIDC
+      region: us-west-2
+      url: https://oidc.eks.us-west-2.amazonaws.com/id/EXAMPLED539D4633E53DE1B716D3041E
+      client_id_list:
+        - sts.amazonaws.com
+      thumbprint_list:
+        - 9e99a48a9960b14926bb7f3b02e22da0ecd2e1a0
+      tags:
+        - Key: Team
+          Value: DevOps

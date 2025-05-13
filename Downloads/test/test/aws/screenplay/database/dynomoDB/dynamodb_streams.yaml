@@ -1,0 +1,11 @@
+resources:
+  dynamodb_streams:
+    - table_name: MySampleTable214
+      stream_view_type: NEW_AND_OLD_IMAGES
+      region: us-east-1
+    - table_name: MySampleTable214
+      stream_view_type: NEW_AND_OLD_IMAGES
+      region: eu-west-1
+    - table_name: MySampleTable214
+      stream_view_type: NEW_AND_OLD_IMAGES
+      region: ap-southeast-1

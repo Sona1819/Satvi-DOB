@@ -1,0 +1,27 @@
+resources:
+  cache_users:
+    - user_id: my-redis-user
+      user_name: redisUser1
+      engine: redis
+      access_string: "on ~* +@all"
+      passwords:
+        - StrongPassword123!
+      no_password_required: false
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: CustomerPortal
+
+    - user_id: readonly-user
+      user_name: readonlyUser
+      engine: redis
+      access_string: "on ~readonly/* +get"
+      no_password_required: true
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Development
+        - Key: Role
+          Value: ReadOnly

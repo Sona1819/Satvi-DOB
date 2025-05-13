@@ -1,0 +1,26 @@
+resources:
+  ###########################################################################
+  # IAM USER 
+  ###########################################################################
+  iam_users:
+    - name: "newdnevops"
+      path: "/dev/"
+      region: "us-east-1"
+      groups:
+        - "Devops-bot"
+      tags:
+        - Key: "Environment"
+          Value: "Development"
+        - Key: "CreatedBy"
+          Value: "CICD"
+
+    - name: "nextuser"
+      path: "/dev/"
+      region: "us-east-1"
+      groups:
+        - "Devops-bot"
+      tags:
+        - Key: "Environment"
+          Value: "Development"
+        - Key: "CreatedBy"
+          Value: "CICD"

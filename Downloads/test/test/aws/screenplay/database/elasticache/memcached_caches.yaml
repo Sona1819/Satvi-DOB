@@ -1,0 +1,16 @@
+resources:
+  memcached_caches:
+    - name: memcached_caches
+      cluster_id: my-memcached-cluster
+      cache_node_type: cache.t3.micro
+      num_cache_nodes: 2
+      security_group_ids:
+        - sg-0ca663c8d8e6a2bb3
+      subnet_group_name: my-elasticache-subnet-group2
+      parameter_group_name: default.memcached1.6
+      region: us-west-1
+      tags:
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Name"
+          Value: "MyMemcachedCluster"

@@ -1,0 +1,16 @@
+resources:
+  ######################################################################
+  # CUSTOMER GATEWAYS
+  ######################################################################
+  customer_gateways:
+    - name: customergateway
+      bgp_asn: 65000
+      ip_address: "54.176.159.246"
+      type: "ipsec.1"
+      region: "us-west-1"
+      tags:
+        - Key: "Environment"
+          Value: "Development"
+        - Key: "Name"
+          Value: "MyCustomerGateway"
+

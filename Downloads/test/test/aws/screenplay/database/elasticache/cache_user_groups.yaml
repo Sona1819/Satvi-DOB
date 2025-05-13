@@ -1,0 +1,14 @@
+resources:
+  cache_user_groups:
+    - user_group_id: my-redis-usergroup
+      engine: redis
+      user_ids:
+        - my-redis-user
+        - readonly-user
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: CustomerPortal
+

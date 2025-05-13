@@ -1,0 +1,13 @@
+resources:
+  dynamodb_dax_subnet_groups:
+    - name: my-dax-subnet-group
+      region: us-west-1
+      subnet_ids:
+        - subnet-00b71dba55855b80a
+        - subnet-072da49a94b22ad5c
+      description: DAX subnet group for primary deployment
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: RealTimeAnalytics

@@ -1,0 +1,12 @@
+resources:
+  transit_gateway_route_table_associations:
+    - name: WebTGWAssociation
+      region: us-west-1
+      route_table_id: tgw-rtb-02fcb4732f380e72e 
+      attachment_id: tgw-attach-0e2fa4d1136c368e1
+      tags:
+        - Key: Name
+          Value: WebTGWAssociation
+        - Key: Environment
+          Value: Production
+

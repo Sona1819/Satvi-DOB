@@ -1,0 +1,13 @@
+resources:
+  endpoints:
+    - name: MyS3Endpoint
+      vpc_id: vpc-0c4737c217f1e8ef2
+      service_name: com.amazonaws.us-west-1.s3
+      vpc_endpoint_type: Gateway
+      route_table_ids:
+        - rtb-0182b2f6dc51d7710
+      region: us-west-1
+      tags:
+        - Key: Name
+          Value: MyS3Endpoint
+

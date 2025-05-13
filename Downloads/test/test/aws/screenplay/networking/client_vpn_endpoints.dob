@@ -1,0 +1,20 @@
+resources:
+  client_vpn_endpoints:
+    - name: "my-client-vpn"
+      client_cidr_block: "10.0.0.0/22"
+      server_certificate_arn: "arn:aws:acm:us-east-1:533267079506:certificate/fbb0cf5a-b25b-4fec-9ed2-a7eca3acac16"
+      authentication_options:
+        - Type: "certificate-authentication"
+          MutualAuthentication:
+            ClientRootCertificateChainArn: "arn:aws:acm:us-east-1:533267079506:certificate/a53439a9-93a3-4f97-80b8-c34e1464dfe0"
+      connection_log_options:
+        Enabled: true
+        CloudwatchLogGroup: "/aws/lambda/devops"
+        CloudwatchLogStream: "2024/10/04/[$LATEST]0445b984ef91422582e5b08479dfaf3b"
+      vpc_id: "vpc-066a018e78dcb9b3e"
+      region: "us-east-1"
+      tags:
+        - Key: "Name"
+          Value: "MyClientVPN"
+        - Key: "Environment"
+          Value: "Development"

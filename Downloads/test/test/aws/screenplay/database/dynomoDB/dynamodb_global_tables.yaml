@@ -1,0 +1,13 @@
+resources:
+  dynamodb_global_tables:
+    - global_table_name: MySampleTable214
+      replication_regions:
+        - us-east-1
+        - eu-west-1
+        - ap-southeast-1
+      region: us-east-1
+      tags:
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Project"
+          Value: "GlobalDataReplication"

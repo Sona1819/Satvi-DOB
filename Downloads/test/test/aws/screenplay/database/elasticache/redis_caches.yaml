@@ -1,0 +1,18 @@
+resources:
+  redis_caches:
+    - replication_group_id: my-redis-single-node2
+      description: "Single Redis instance without failover"
+      cache_node_type: cache.m5.large
+      num_node_groups: 1
+      automatic_failover: false
+      region: us-west-1
+      security_group_ids:
+        - sg-0ca663c8d8e6a2bb3
+      subnet_group_name: my-elasticache-subnet-group2
+      parameter_group_name: my-redis-parameter-group
+      tags:
+        - Key: Name
+          Value: "MyRedisSingleNode"
+        - Key: Environment
+          Value: "Development"
+

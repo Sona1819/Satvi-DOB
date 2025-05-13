@@ -1,0 +1,33 @@
+resources:
+  cloudfront_distributions:
+    - name: my-distribution
+      distribution_config:
+        CallerReference: "my-distribution-001"
+        Comment: "Static website CDN"
+        Enabled: true
+        Origins:
+          Quantity: 1
+          Items:
+            - Id: myS3Origin
+              DomainName: mybucket.s3.amazonaws.com
+              S3OriginConfig:
+                OriginAccessIdentity: ""
+        DefaultCacheBehavior:
+          TargetOriginId: myS3Origin
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods:
+            Quantity: 2
+            Items: ["GET", "HEAD"]
+            CachedMethods:
+              Quantity: 2
+              Items: ["GET", "HEAD"]
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
+          TrustedSigners:
+            Enabled: false
+            Quantity: 0
+          MinTTL: 0
+          DefaultTTL: 86400
+          MaxTTL: 31536000

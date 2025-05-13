@@ -1,0 +1,12 @@
+resources:
+  network_interfaces:
+    - name: MyNetworkInterface
+      subnet_id: subnet-051c05ceb5f5b183b
+      groups:
+        - sg-0ca663c8d8e6a2bb3
+      description: Primary network interface
+      private_ip_address: 10.0.1.10
+      region: us-west-1
+      tags:
+        - Key: Name
+          Value: MyNetworkInterface

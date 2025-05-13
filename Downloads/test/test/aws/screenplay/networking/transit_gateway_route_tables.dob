@@ -1,0 +1,11 @@
+resources:
+  # Transit Gateway Route Tables
+  transit_gateway_route_tables:
+    - name: "MyTGWRouteTable"
+      region: "us-west-1"
+      transit_gateway_id: "tgw-0145cefc510eeefc5"  # ID of the existing Transit Gateway
+      tags:
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Name"
+          Value: "MyTGWRouteTable"

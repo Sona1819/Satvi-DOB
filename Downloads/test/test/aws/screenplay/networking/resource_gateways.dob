@@ -1,0 +1,9 @@
+resources:
+  resource_gateways:
+    - name: "MyApiGateway"
+      api_name: "MySampleAPI"
+      description: "A simple API Gateway created by screenplay"
+      region: "us-west-1"
+      tags:
+        - Key: "Name"
+          Value: "MyApiGateway"

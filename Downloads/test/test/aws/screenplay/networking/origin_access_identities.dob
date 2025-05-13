@@ -1,0 +1,9 @@
+resources:
+  origin_access_identities:
+    - name: my-cloudfront-oai
+      comment: Used for S3 access from CloudFront
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: MediaDelivery

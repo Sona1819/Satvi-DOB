@@ -1,0 +1,17 @@
+resources:
+  eks_clusters:
+    - name: "MyEKSCluster"
+      region: us-east-1
+      version: "1.31"
+      role_arn: arn:aws:iam::533267079506:role/eksClusterRole
+      resources_vpc_config:
+        subnetIds:
+          - subnet-08b3efc0fc5d067cf
+          - subnet-02389c02fcacc9189
+        securityGroupIds:
+          - sg-04ac7dc75e1f54b3a
+        endpointPublicAccess: True
+        endpointPrivateAccess: False
+      tags:
+        - Key: "Name"
+          Value: "MyEKSCluster"

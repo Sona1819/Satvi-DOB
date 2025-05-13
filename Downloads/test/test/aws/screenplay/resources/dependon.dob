@@ -1,0 +1,81 @@
+resources:
+  vpcs:
+    - name: MyVPC
+      cidr_block: 10.0.0.0/16
+      region: us-east-1
+      tags:
+        - Key: Name
+          Value: MyVPC
+
+  subnets:
+    - cidr_block: 10.0.1.0/24
+      availability_zone: us-east-1a
+      vpc_id: ${vpc_id}
+      region: us-east-1
+      auto_assign_public_ip: True
+      tags:
+        - Key: Name
+          Value: MySubnet
+
+
+  internet_gateways:
+    - vpc_id: ${vpc_id} 
+      region: us-east-1
+      tags:
+        - Key: Name
+          Value: MyIGW
+
+  route_tables:
+    - vpc_id: ${vpc_id}
+      region: us-east-1
+      routes:
+        - destination_cidr_block: 0.0.0.0/0
+          gateway_id: ${internet_gateway_id}
+      associations:
+        - subnet: MySubnet
+      tags:
+        - Key: Name
+          Value: MyRouteTable
+
+  security_groups:
+    - name: MySG
+      description: Allow SSH and HTTP
+      vpc_id: ${vpc_id}
+      region: us-east-1
+      inbound_rules:
+        - protocol: tcp
+          port_range: 22
+          cidr_blocks: ['0.0.0.0/0']
+        - protocol: tcp
+          port_range: 80
+          cidr_blocks: ['0.0.0.0/0']
+      outbound_rules:
+        - protocol: "-1"
+          port_range: 0
+          cidr_blocks: ['0.0.0.0/0']
+      tags:
+        - Key: Name
+          Value: MySecurityGroup
+
+  key_pairs:
+    - name: devops-bot
+      region: us-east-1
+      tags:
+        - Key: Environment
+          Value: Dev
+        - Key: Name
+          Value: devops-bot
+
+  ec2_instances:
+    - name: ec2 instance
+     # EC2 instance creation
+      instance_type: t2.small
+      ami_id: ami-050887ebff330de9f
+      key_name: devops-bot
+      region: us-east-1
+      security_group: ${security_group_id}
+      count: 1
+      tags:
+        - Key: Name
+          Value: Runner
+      subnet_id: ${subnet_id}

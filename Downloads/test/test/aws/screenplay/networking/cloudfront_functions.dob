@@ -1,0 +1,22 @@
+resources:
+  cloudfront_functions:
+    - name: MyEdgeFunction
+      function_config:
+        Comment: "Basic hello world function"
+        Runtime: cloudfront-js-1.0
+      function_code: |
+        function handler(event) {
+          var response = {
+            statusCode: 200,
+            statusDescription: 'OK',
+            headers: {
+              'cache-control': { value: 'max-age=100' },
+              'content-type': { value: 'text/plain' }
+            },
+            body: 'Hello from CloudFront!'
+          };
+          return response;
+        }
+      tags:
+        - Key: Name
+          Value: MyEdgeFunction

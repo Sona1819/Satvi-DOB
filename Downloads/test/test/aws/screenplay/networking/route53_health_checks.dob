@@ -1,0 +1,14 @@
+resources:
+  route53_health_checks:
+    - name: "my-api-healthcheck"
+      region: us-east-1
+      health_check_config:
+        Type: "HTTPS"
+        FullyQualifiedDomainName: "api.example.com"
+        Port: 443
+        ResourcePath: "/health"
+        RequestInterval: 30
+        FailureThreshold: 3
+      tags:
+        - Key: Environment
+          Value: Production

@@ -1,0 +1,10 @@
+resources:
+  access_analyzers:
+    - name: "MyAccessAnalyzer"
+      region: "us-west-1"
+      type: "ACCOUNT"
+      tags:
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Name"
+          Value: "MyAccessAnalyzer"

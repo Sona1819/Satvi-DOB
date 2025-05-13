@@ -1,0 +1,12 @@
+resources:
+  memorydb_acls:
+    - acl_name: my-memorydb-acl
+      usernames:
+        - redis-admin2
+        - redis-admin
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Project
+          Value: PaymentsSystem

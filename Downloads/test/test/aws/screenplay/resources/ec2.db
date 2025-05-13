@@ -1,0 +1,15 @@
+resources:
+  # EC2 Instance creation
+  ec2_instances:
+    - name: ec2 instance
+     # EC2 instance creation
+      instance_type: t2.small
+      ami_id: ami-04f7a54071e74f488
+      key_name: devops-bot
+      region: us-west-1
+      security_group: sg-04529c1e7a5c67db7
+      count: 1
+      tags:
+        - Key: Name
+          Value: newinstance
+      subnet_id: subnet-00b71dba55855b80a

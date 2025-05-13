@@ -1,0 +1,20 @@
+resources:
+  rds_instances:
+    - db_instance_identifier: my-db-instance
+      allocated_storage: 20
+      db_instance_class: db.t3.micro
+      engine: mysql
+      master_username: admin
+      master_user_password: MySecurePassword123!
+      vpc_security_group_ids:
+        - sg-0ca663c8d8e6a2bb3
+      db_subnet_group_name: my-rds-subnet-group
+      multi_az: false
+      publicly_accessible: false
+      storage_type: gp2
+      region: us-west-1
+      tags:
+        - Key: Name
+          Value: "MyRDSInstance"
+        - Key: Environment
+          Value: "Development"

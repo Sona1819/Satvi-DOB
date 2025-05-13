@@ -1,0 +1,13 @@
+resources:
+  route_tables:
+    - name: TestRoutTable
+      vpc_id: vpc-0c4737c217f1e8ef2
+      region: us-west-1
+      routes:
+        - destination_cidr_block: "0.0.0.0/0"
+          gateway_id: igw-08678c3d2aa16867e   # Attach Internet Gateway
+      associations:
+        - subnet: testsubnet
+      tags:
+        - Key: Name
+          Value: TestRoutTable

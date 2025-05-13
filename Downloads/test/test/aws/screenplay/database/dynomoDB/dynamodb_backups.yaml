@@ -1,0 +1,11 @@
+resources:
+  dynamodb_backups:
+    - name: db backup
+      table_name: MySampleTable214
+      backup_name: MySampleTable214-DailyBackup
+      region: us-west-1
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: BackupType
+          Value: Daily

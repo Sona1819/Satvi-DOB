@@ -1,0 +1,18 @@
+resources:
+  # Load Balancer creation
+  load_balancers:
+    - name: "Mapplication"
+      region: us-west-1
+      subnets:
+        - subnet-00b71dba55855b80a
+        - subnet-072da49a94b22ad5c
+      security_groups:
+        - sg-04529c1e7a5c67db7
+      scheme: internet-facing
+      type: network
+      ip_address_type: ipv4
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Name
+          Value: MyLoadBalancer1

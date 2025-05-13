@@ -1,0 +1,20 @@
+resources:
+  valkey_caches:
+    - name: valkey_caches
+      replication_group_id: my-valkey-cluster
+      region: us-west-1
+      description: Production Valkey Replication Group
+      cache_node_type: cache.t4g.micro
+      num_node_groups: 1
+      replicas_per_node_group: 1
+      automatic_failover: true
+      transit_encryption_enabled: true   
+      security_group_ids:
+        - sg-0ca663c8d8e6a2bb3
+      subnet_group_name: my-elasticache-subnet-group2
+      parameter_group_name: default.valkey8
+      tags:
+        - Key: Environment
+          Value: Production
+        - Key: Name
+          Value: MyValkeyCluster

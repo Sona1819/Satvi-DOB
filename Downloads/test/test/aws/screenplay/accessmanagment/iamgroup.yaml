@@ -1,0 +1,24 @@
+resources:
+  user_groups:
+    - name: DevTeamGroup
+      region: us-east-1
+      path: /dev/
+      tags:
+        - Key: Team
+          Value: Development
+        - Key: Environment
+          Value: Production
+        - Key: Name 
+          Value: DevTeamGroup    
+
+    - name: QAGroup
+      region: eu-west-1
+      path: /qa/
+      tags:
+        - Key: Team
+          Value: QA
+        - Key: Project
+          Value: CustomerPortal
+        - Key: Name 
+          Value: QAGroup          
+
